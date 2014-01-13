@@ -1,4 +1,4 @@
-package com.likewaze.server;
+package com.likewaze.server.dao;
 
 
 import javax.persistence.EntityManager;

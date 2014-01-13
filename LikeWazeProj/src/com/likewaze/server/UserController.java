@@ -1,32 +1,39 @@
 package com.likewaze.server;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import org.mortbay.log.Log;
 import org.restlet.resource.ServerResource;
 
 import com.likewaze.model.User;
 
-
-public class UserController extends ServerResource {
+@Path("/user")
+public class UserController {
 
 	 protected EntityManagerFactory emf;
      protected EntityManager em;
 
      public UserController() {
     	 
-    	     Log.warn(" Inside UserController logger  ! ");
-             emf = Persistence.createEntityManagerFactory("transactions-optional");
-             em = emf.createEntityManager();
+    	   //  Log.warn(" Inside UserController logger  ! ");
+            // emf = Persistence.createEntityManagerFactory("endomondo");
+            // em = emf.createEntityManager();
      }
     
      
@@ -35,7 +42,7 @@ public class UserController extends ServerResource {
      @Consumes(MediaType.APPLICATION_JSON)
      @Produces({ MediaType.APPLICATION_JSON })
      public User createUser(User obj) {
-    	 UserDao dataManager = new UserDao(em);
+    	/* UserDao dataManager = new UserDao(em);
          //obj.setId(0);
          System.out.println(" registering user how nickname :"+ obj.getPseudo()+" and email is :"+obj.getEmail());
          
@@ -49,21 +56,27 @@ public class UserController extends ServerResource {
                  System.out.println(" nickname already exist "); return null;
          }
          
-         dataManager.create(obj);
+         dataManager.create(obj);*/
 
-         return obj;
+    	 User  us = new User();
+    	 us.setEmail("email@yahoo.fr");
+    	 us.setPseudo("pseudoxx ");
+    	 
+         return us;
     	 
      }
-	
+	//   // 
     @GET
     @Path("{id}")
     @Produces({MediaType.APPLICATION_JSON })
-	public User getUserById(@PathParam("id") int iduser) {
+	public  List<String> getUserById(@PathParam("id") int iduser) {
 
-        User res = new UserDao(em).getUserById(iduser);
-
-        return res;
-		
+        //User res = new UserDao(em).getUserById(iduser);
+    	List<String> list = new ArrayList<String>();
+    	list.add("toto"); list.add("sosos");
+    	
+		return list;
+   
 	}
      
 	

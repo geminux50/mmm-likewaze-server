@@ -1,8 +1,9 @@
-package com.likewaze.server;
+package com.likewaze.server.dao;
 
 import javax.persistence.EntityManager;
 
 import com.likewaze.model.User;
+
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Collection;

@@ -6,14 +6,16 @@ import javax.persistence.*;
 @Entity
 public class User implements Serializable  {
    
+  
+	private static final long serialVersionUID = 1L;
+   
    @Id
    private int userId; 	
    private String pseudo;
    private String email;
    private String passwd;
-   @OneToOne
-   private Device myDevice;
-			   
+  
+   
 			public int getUserId() {
 				return userId;
 			}
@@ -38,11 +40,7 @@ public class User implements Serializable  {
 			public void setPasswd(String passwd) {
 				this.passwd = passwd;
 			}
-			public Device getMyDevice() {
-				return myDevice;
-			}
-			public void setMyDevice(Device myDevice) {
-				this.myDevice = myDevice;
-			}
+			
+			
 			  
 }
