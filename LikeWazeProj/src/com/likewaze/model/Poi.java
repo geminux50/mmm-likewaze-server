@@ -1,9 +1,19 @@
 package  com.likewaze.model;
 import java.util.Collection;
+
+import javax.jdo.annotations.IdGeneratorStrategy;
+import javax.jdo.annotations.Persistent;
 import javax.persistence.*;
 
 @Entity
-public class Poi extends GpsPoint{
+public class Poi {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long idpoi;
+
+	private  double curLat;
+	private  double curLong;
 	
 	private TypePoi type;
 	//@Lob
@@ -14,6 +24,26 @@ public class Poi extends GpsPoint{
 	private Device device;
 	@ManyToOne	
 	private Map  map;
+	
+	
+	public Long getIdpoi() {
+		return idpoi;
+	}
+	public void setIdpoi(Long idpoi) {
+		this.idpoi = idpoi;
+	}
+	public double getCurLat() {
+		return curLat;
+	}
+	public void setCurLat(double curLat) {
+		this.curLat = curLat;
+	}
+	public double getCurLong() {
+		return curLong;
+	}
+	public void setCurLong(double curLong) {
+		this.curLong = curLong;
+	}
 	
 	
 	public TypePoi getType() {

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/mylibsGooglEngine"/>
-	<classpathentry kind="lib" path="/home/eagle/Desktop/lib/asm-3.1.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/jersey-json.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/jersey-bundle-1.17.1.jar"/>
-	<classpathentry kind="lib" path="/home/eagle/Desktop/lib/genson-0.98.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/genson-0.98.jar"/>
+	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>

@@ -1,9 +1,14 @@
 package  com.likewaze.model;
 import java.util.Collection;
+
+import javax.jdo.annotations.IdGeneratorStrategy;
+import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.PrimaryKey;
 import javax.persistence.*;
 
 @Entity
 public class Map{
+	
 	@Id
 	private int idmap;
     private double rayonaction;	
