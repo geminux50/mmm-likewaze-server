@@ -2,7 +2,7 @@ package com.likewaze.server;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -14,11 +14,17 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-
-import com.likewaze.data.UserData;
 import com.likewaze.model.User;
 import com.likewaze.server.dao.UserDao;
 
+
+/**
+ * 
+ *   User conttroller 
+ * 
+ * @author 
+ *
+ */
 @Path("/user")
 public class UserController {
 
@@ -33,21 +39,12 @@ public class UserController {
           emf = Persistence.createEntityManagerFactory("transactions-optional");
           em = emf.createEntityManager();
     	  
-   /*       userlist = new ArrayList<User>();
-    	   
-    	 User  us1 = new User(); 
-    	 us1.setUserId(0);us1.setEmail("email1@yahoo.fr");us1.setPseudo("user1"); us1.setPasswd("pass1");
-    	 User  us2 = new User(); 
-    	 us2.setUserId(2); us2.setEmail("email2@yahoo.fr");us2.setPseudo("user2"); us2.setPasswd("pass2");
-    	 User  us3 = new User(); 
-    	 us3.setUserId(3); us3.setEmail("email3@yahoo.fr");us3.setPseudo("user3"); us3.setPasswd("pass3");
-    	 
-    	 userlist.add(us1);  userlist.add(us2);  userlist.add(us3);
-    	 System.out.println(" *******   User Controller  constructor was  called ! ");
-    	
-       */
      }
-    
+      /**
+       * Create a user 
+       * @param obj
+       * @return
+       */
     
      @POST
      @Path("/create")
@@ -62,6 +59,12 @@ public class UserController {
          return us;
      }
 	
+     /**
+      *   Login  operation 
+      * @param pseudo_usr
+      * @param pass_usr
+      * @return
+      */
     
     @GET
     @Path("login/{pseudo}/{passwd}")
@@ -79,7 +82,10 @@ public class UserController {
     	
 	
 	}
-    
+    /**
+     * 
+     * @return  List of all the users 
+     */
     @GET
     @Path("List")
     @Produces({MediaType.APPLICATION_JSON })
@@ -91,6 +97,13 @@ public class UserController {
 	
     }
     
+    /**
+     *   Log In operation 
+     *  
+     * @param pseudo_usr  : pseudo of the user 
+     * @param pass_usr  : password  of user 
+     * @return  : an instance of user 
+     */
     @GET
     @Path("oplogin/{pseudo}/{passwd}")
     @Produces({MediaType.APPLICATION_JSON })
@@ -102,20 +115,5 @@ public class UserController {
     	// if not 
     	return u;
 	}
-    
-    
-    
-    
-    
-    // To delete 
-    @POST
-    @Path("adduser")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces({ MediaType.APPLICATION_JSON })
-    public boolean addUser(User obj) {
-    	
-    	UserData.saveUser(obj);
-    	return true;
-    }
-    
+       
 }

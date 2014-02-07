@@ -6,8 +6,13 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import com.likewaze.model.Poi;
-import com.likewaze.model.User;
 
+/**
+ *   Poi data acces object 
+ *   
+ * @author 
+ *
+ */
 public class PoiDao    extends DataDao {
 
 	public PoiDao(EntityManager em) {

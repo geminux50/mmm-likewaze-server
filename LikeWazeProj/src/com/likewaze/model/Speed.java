@@ -1,6 +1,7 @@
 package  com.likewaze.model;
-import java.util.Collection;
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Speed {
